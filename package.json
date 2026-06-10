@@ -3,13 +3,32 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "node src/index.js",
+    "test-db": "tsx src/db/testconnections.ts",
+    "db:create": "sequelize-cli db:create",
+    "db:migrate": "sequelize-cli db:migrate",
+    "db:migrate:undo": "sequelize-cli db:migrate:undo",
+    "db:seed": "sequelize-cli db:seed:all",
+    "db:drop": "sequelize-cli db:drop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.2.1"
+    "@epic-web/remember": "^1.1.0",
+    "express": "^5.2.1",
+    "pg": "^8.21.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.8"
+  },
+  "devDependencies": {
+    "cors": "^2.8.6",
+    "custom-env": "^2.0.6",
+    "helmet": "^8.2.0",
+    "morgan": "^1.11.0",
+    "tsx": "^4.22.4",
+    "zod": "^4.4.3"
   }
 }

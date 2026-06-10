@@ -1,22 +1,15 @@
-import express from 'express'
-import process from 'process'
-const app =express()
 
-console.log("Hello World")
- 
+import process from 'process'
+import app from './server.js'
+
 
 let port = process.argv[2]
 let env = process.argv[3]
 
 
-app.get('/',(req,res)=>{
-    res.send("All the Habits are retrived succesfully")
-})
-
-
-app.listen(port , name,()=>{
+app.listen(port , env,()=>{
     console.log(
         `Server is listening on port ${port}`
     )
-    console.log(`Server is listening on  ${name} env` )
+    console.log(`Server is listening on  ${env} env` )
 })
