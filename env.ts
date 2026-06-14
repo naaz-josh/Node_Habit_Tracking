@@ -28,6 +28,11 @@ const envSchema = z.object({
   DB_NAME: z.string().trim().min(1),
   DB_USER: z.string().trim().min(1),
   DB_PASSWORD: z.string().min(8, 'Password must be at least 8 characters'),
+
+  // Security Configurations
+  JWT_SECRET: z.string().min(32, 'JWT_SECRET must be at least 32 characters'),
+  JWT_EXPIRES_IN: z.string().default('7d'),// e.g., '1h', '30m'
+  BCRYPT_SALT_ROUNDS: z.coerce.number().min(10).max(20).default(12),
 })
 
 export type Env = z.infer<typeof envSchema>
