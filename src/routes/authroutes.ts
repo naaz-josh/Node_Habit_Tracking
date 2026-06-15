@@ -1,6 +1,6 @@
 import {Router} from 'express';
-import {validateBody}from '../middleware/validation.ts';
-import {register,login} from '../controller/authController.ts';
+import {validateBody}from '../middleware/validation';
+import {register,login} from '../controller/authController';
 import {z} from 'zod';
 const router = Router();
 

@@ -1,9 +1,9 @@
 import type {Request, Response} from 'express';
-import {hashedPassword} from '../utils/passwords.ts';
-import {generateToken} from '../utils/jwt.ts';
-import db from '../db/connection.ts';
-import {comparePasswords} from '../utils/passwords.ts';
-import {User} from '../db/schema.ts';
+import {hashedPassword} from '../utils/passwords';
+import {generateToken} from '../utils/jwt';
+import db from '../db/connection';
+import {comparePasswords} from '../utils/passwords';
+import {User} from '../db/schema';
 
 
 export const register = async (req: Request, res: Response) => {
@@ -26,8 +26,10 @@ const hashedPass = await hashedPassword(password)
         email: user.getDataValue('email'),
         username: user.getDataValue('userName')
     })
-    
-    res.status(201).json({ message: 'User registered successfully', user, token })
+
+    const { password: _, ...safeUser } = user.toJSON()
+
+    res.status(201).json({ message: 'User registered successfully', user: safeUser, token })
 }
 catch(error){{
     console.error('Error during registration:', error);

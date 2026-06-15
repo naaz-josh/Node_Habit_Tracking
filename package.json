@@ -7,13 +7,15 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "test-db": "tsx src/db/testconnections.ts",
+    "test": "cross-env APP_STAGE=test vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "seed": "tsx seed.ts",
     "db:create": "sequelize-cli db:create",
     "db:migrate": "sequelize-cli db:migrate",
     "db:migrate:undo": "sequelize-cli db:migrate:undo",
     "db:seed": "sequelize-cli db:seed:all",
-    "db:drop": "sequelize-cli db:drop",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "db:drop": "sequelize-cli db:drop"
   },
   "author": "",
   "license": "ISC",
@@ -27,17 +29,21 @@
     "jose": "^6.2.3",
     "pg": "^8.21.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.37.8"
+    "sequelize": "^6.37.8",
+    "vitest": "^4.1.8"
   },
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
     "@types/cors": "^2.8.19",
     "@types/helmet": "^0.0.48",
     "@types/morgan": "^1.9.10",
+    "@types/supertest": "^7.2.0",
     "cors": "^2.8.6",
+    "cross-env": "^10.1.0",
     "custom-env": "^2.0.6",
     "helmet": "^8.2.0",
     "morgan": "^1.11.0",
+    "supertest": "^7.2.2",
     "tsx": "^4.22.4",
     "zod": "^4.4.3"
   }

@@ -1,6 +1,6 @@
 import {SignJWT, jwtVerify} from 'jose';
 import {createSecretKey} from 'crypto';
-import env from '../../env.ts';
+import env from '../../env';
 
 
 
