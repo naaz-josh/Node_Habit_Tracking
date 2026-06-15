@@ -2,11 +2,10 @@ import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import morgan from 'morgan';
-import { z } from 'zod'; // Import zod directly here
-import { Habit,User,Entry,Tag} from './db/schema.ts'; // Adjusted path to your schema
 import authRoutes from './routes/authroutes'
 import userRoutes from './routes/userRoutes'
 import habitRoutes from './routes/habitRoutes'
+import { authenticateToken } from './middleware/auth'
 
 const app = express();
 
