@@ -75,7 +75,7 @@ export const Habit = sequelize.define('Habit', {
   tableName: 'habits',
   timestamps: true,
   underscored: true
-});
+}) as any;
 
 
 

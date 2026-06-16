@@ -3,6 +3,7 @@ import {validateBody}from '../middleware/validation.ts';
 import {register,login} from '../controller/authController.ts';
 import {z} from 'zod';
 const router = Router();
+import {authenticateToken} from '../middleware/auth.ts';
 
 export const insertUserSchema = z.object({
   email: z.email(),
