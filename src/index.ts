@@ -1,5 +1,5 @@
-import app from './server.ts';
-import sequelize from './db/connection.ts';
+import app from './server';
+import sequelize from './db/connection';
 
 const PORT = process.argv[2] || 3000;
 
